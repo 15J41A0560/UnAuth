@@ -97,16 +97,16 @@
         <!-- Nav -->
         <div class="nav container">
             <a href="#" class="logo">Luxury Watch Boutique</a>
-            <!--Cart-Icon-->
+            <!--Bag-Icon-->
             <button class="LoginButton" onclick="window.location.href = 'https://15j41a0560.github.io/Authenticated/';">
         Login
       </button>
-            <span class="cartRate"> Cart Total </span>
-            <span id='cartValue'>0</span>
+            <span class="bagRate"> Bag Total </span>
+            <span id='bagValue'>0</span>
             <span id="totalCost">0</span>
             <!--HIDDEN-->
             <input id="totalCost" type="hidden" name="totalCost" value="0">
-            <i class='bx bx-shopping-bag' id="cart-icon"></i>
+            <i class='bx bx-shopping-bag' id="bag-icon"></i>
         </div>
 
     </header>
@@ -120,28 +120,28 @@
                 <img src="img/product1.png" alt="" class="product-img">
                 <h2 class="product-title">Platinum Day Date</h2>
                 <span class="price"> ₹ 300,000</span>
-                <p><button id="addToCart1">Add to Cart</button></p>
+                <p><button id="addToBag1">Add to Bag</button></p>
             </div>
             <!--Box-2-->
             <div class="product-box">
                 <img src="img/product2.jpg" alt="" class="product-img">
                 <h2 class="product-title">Green Submariner</h2>
                 <span class="price"> ₹ 400,000</span>
-                <p><button id="addToCart2">Add to Cart</button></p>
+                <p><button id="addToBag2">Add to Bag</button></p>
             </div>
             <!--Box-3-->
             <div class="product-box">
                 <img src="img/product3.jpg" alt="" class="product-img">
                 <h2 class="product-title">Oyester Perpetual Calender</h2>
                 <span class="price"> ₹ 200,000</span>
-                <p><button id="addToCart3">Add to Cart</button></p>
+                <p><button id="addToBag3">Add to Bag</button></p>
             </div>
             <!--Box-4-->
             <div class="product-box">
                 <img src="img/product4.jpeg" alt="" class="product-img">
                 <h2 class="product-title">Black Submariner</h2>
                 <span class="price"> ₹ 700,000</span>
-                <p><button id="addToCart4">Add to Cart</button></p>
+                <p><button id="addToBag4">Add to Bag</button></p>
             </div>
         </div>
     </section>
@@ -170,22 +170,22 @@
         //         callback("", "error reason");
         //     }
 
-        // EVENT LISTNER CART VALUE
+        // EVENT LISTNER BAG VALUE
 
         document.addEventListener('DOMContentLoaded', function() {
-            var cartValueElement = document.getElementById('cartValue'); //ZERO
+            var bagValueElement = document.getElementById('bagValue'); //ZERO
             var totalCostElement = document.getElementById('totalCost'); //ZERO
-            var addButton1 = document.getElementById('addToCart1');
-            var addButton2 = document.getElementById('addToCart2');
-            var addButton3 = document.getElementById('addToCart3');
-            var addButton4 = document.getElementById('addToCart4');
+            var addButton1 = document.getElementById('addToBag1');
+            var addButton2 = document.getElementById('addToBag2');
+            var addButton3 = document.getElementById('addToBag3');
+            var addButton4 = document.getElementById('addToBag4');
 
 
             addButton1.addEventListener('click', function() {
-                console.log("CartVALUE" + cartValueElement.innerHTML);
-                var currentCartValue = parseInt(cartValueElement.innerHTML);
-                var newCartValue = currentCartValue + 1;
-                cartValueElement.innerHTML = newCartValue; ////
+                console.log("BagVALUE" + bagValueElement.innerHTML);
+                var currentBagValue = parseInt(bagValueElement.innerHTML);
+                var newBagValue = currentBagValue + 1;
+                bagValueElement.innerHTML = newBagValue; ////
 
                 console.log("CostVALUE" + totalCostElement.innerHTML);
                 var currentCostValue = parseInt(totalCostElement.innerHTML);
@@ -195,10 +195,10 @@
             });
 
             addButton2.addEventListener('click', function() {
-                console.log(cartValueElement.innerHTML);
-                var currentCartValue = parseInt(cartValueElement.innerHTML);
-                var newCartValue = currentCartValue + 1;
-                cartValueElement.innerHTML = newCartValue;
+                console.log(bagValueElement.innerHTML);
+                var currentBagValue = parseInt(bagValueElement.innerHTML);
+                var newBagValue = currentBagValue + 1;
+                bagValueElement.innerHTML = newBagValue;
 
                 console.log("CostVALUE" + totalCostElement.innerHTML);
                 var currentCostValue = parseInt(totalCostElement.innerHTML);
@@ -208,10 +208,10 @@
             });
 
             addButton3.addEventListener('click', function() {
-                console.log(cartValueElement.innerHTML);
-                var currentCartValue = parseInt(cartValueElement.innerHTML);
-                var newCartValue = currentCartValue + 1;
-                cartValueElement.innerHTML = newCartValue;
+                console.log(bagValueElement.innerHTML);
+                var currentBagValue = parseInt(bagValueElement.innerHTML);
+                var newBagValue = currentBagValue + 1;
+                bagValueElement.innerHTML = newBagValue;
 
                 console.log("CostVALUE" + totalCostElement.innerHTML);
                 var currentCostValue = parseInt(totalCostElement.innerHTML);
@@ -221,10 +221,10 @@
             });
 
             addButton4.addEventListener('click', function() {
-                console.log(cartValueElement.innerHTML);
-                var currentCartValue = parseInt(cartValueElement.innerHTML);
-                var newCartValue = currentCartValue + 1;
-                cartValueElement.innerHTML = newCartValue;
+                console.log(bagValueElement.innerHTML);
+                var currentBagValue = parseInt(bagValueElement.innerHTML);
+                var newbagValue = currentBagValue + 1;
+                bagValueElement.innerHTML = newBagValue;
 
                 console.log("CostVALUE" + totalCostElement.innerHTML);
                 var currentCostValue = parseInt(totalCostElement.innerHTML);
@@ -237,18 +237,18 @@
 
         });
 
-        ///SDE PUSH TOTAL CART VALUE
+        ///SDE PUSH TOTAL BAG VALUE
         function myFunctionSelect() {
 
             const title = document.title;
-            let x = document.getElementById("cartValue").innerHTML;
+            let x = document.getElementById("bagValue").innerHTML;
             let y = Number(x);
             console.log(y);
 
 
             lpTag.sdes = lpTag.sdes || [];
             lpTag.sdes.push({
-                "type": "cart", //MANDATORY
+                "type": "bag", //MANDATORY
                 "total": document.getElementById("totalCost").innerHTML,
                 "currency": "INR",
                 "numItems": y,
