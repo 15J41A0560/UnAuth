@@ -171,7 +171,7 @@ header {
   display: none;
 }
 
-.LogoutButton {
+.LoginButton {
   background-color: rgba(133, 128, 128, 0.753);
   color: rgb(253, 253, 253);
   border-radius: 10%;
